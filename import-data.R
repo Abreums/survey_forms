@@ -7,5 +7,6 @@ survey_data <-
   read_sheet("https://docs.google.com/spreadsheets/d/1mjzq9i4OaTMIgd_BGRYai8aH0re7ES14wglZreOc0Po/edit?usp=sharing") |> 
   janitor::clean_names()
 
-survey_data |> glimpse()
+survey_data |> 
+  write_rds("survey-data.rds")
 
