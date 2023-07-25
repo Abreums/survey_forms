@@ -39,3 +39,5 @@ surv |>
   facet_wrap(~ question, ncol = 1) 
 
 ```
+
+End.
