@@ -1,4 +1,5 @@
 library(tidyverse)
+library(gt)
 library(googlesheets4)
 
 gs4_deauth()
@@ -10,3 +11,7 @@ survey_data <-
 survey_data |> 
   write_rds("survey-data.rds")
 
+survey_data |> 
+  gt() |> 
+  as_raw_html() |> 
+  cat(file = "file.html")
