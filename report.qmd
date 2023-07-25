@@ -36,7 +36,14 @@ surv <-
 surv |> 
   ggplot(aes(x = answer)) +
   geom_bar() +
-  facet_wrap(~ question, ncol = 1) 
+  facet_wrap(~ question, ncol = 1, 
+             labeller = label_wrap_gen(width=80)) +
+  theme_minimal() +
+  theme(
+   # strip.placement = "outside",
+    strip.text.x.top = element_text(hjust = 0),
+    strip.background = element_rect(fill = "#e6ee6e")
+  ) 
 
 
 ```
