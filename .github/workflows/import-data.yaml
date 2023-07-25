@@ -21,6 +21,7 @@ jobs:
         with:
           packages: |
             any::tidyverse 
+            any::janitor
             any::googlesheets4
 
       - name: Import data
