@@ -8,6 +8,9 @@ editor: visual
 Data is imported from Google form.
 
 ```{r}
+#| echo: false
+#| warning: false
+#| message: false
 library(tidyverse)
 library(googlesheets4)
 
@@ -16,6 +19,10 @@ library(googlesheets4)
 Report last update `r now()`
 
 ```{r}
+#| echo: false
+#| warning: false
+#| message: false
+
 gs4_deauth()
 
 survey_data <- 
@@ -30,4 +37,5 @@ surv |>
   ggplot(aes(x = answer)) +
   geom_bar() +
   facet_wrap(~ question, ncol = 1) 
+
 ```

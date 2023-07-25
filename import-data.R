@@ -19,3 +19,4 @@ surv |>
   ggplot(aes(x = answer)) +
   geom_bar() +
   facet_wrap(~ question, ncol = 1) 
+
