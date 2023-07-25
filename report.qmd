@@ -1,14 +1,25 @@
+---
+title: "Survey Results"
+author: "Abreu"
+format: html
+editor: visual
+---
+
+Data is imported from Google form.
+
+```{r}
 library(tidyverse)
-library(janitor)
 library(googlesheets4)
 
+```
+
+Report last update `r now()`
+
+```{r}
 gs4_deauth()
 
 survey_data <- 
   read_sheet("https://docs.google.com/spreadsheets/d/1mjzq9i4OaTMIgd_BGRYai8aH0re7ES14wglZreOc0Po/edit?usp=sharing") 
-
-# survey_data |> 
-#   write_rds("survey-data.rds")
 
 surv <- 
   survey_data |> 
@@ -19,3 +30,4 @@ surv |>
   ggplot(aes(x = answer)) +
   geom_bar() +
   facet_wrap(~ question, ncol = 1) 
+```
